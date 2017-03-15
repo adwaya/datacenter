@@ -1,6 +1,7 @@
 # Docker Swarm
 Install CS Docker Engine
 - Log in into each host using ssh, and install CS Docker Engine: `curl -SLf https://packages.docker.com/1.13/install.sh  | sh`
+
 Install Universal Control Plane
 - Docker Universal Control Plane (UCP) allows managing from a centralized place your images, applications, networks, and other computing resources
 ```
