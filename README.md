@@ -1,4 +1,17 @@
 # Docker Swarm
+Install CS Docker Engine
+- Log in into each host using ssh, and install CS Docker Engine: `curl -SLf https://packages.docker.com/1.13/install.sh  | sh`
+- Install Universal Control Plane 
+```
+docker run --rm -it --name ucp \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  docker/ucp:2.1.1 install \
+  --host-address <node-ip-address> \
+  --interactive
+```
+where <node-ip-address> is the IP address of the host
+License your installation
+
 To initialize docker swarm
 $ docker swarm init --advertise-addr 10.0.12.3
 
