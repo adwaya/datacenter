@@ -2,10 +2,10 @@
 Install CS Docker Engine
 - Log in into each host using ssh, and install CS Docker Engine: `curl -SLf https://packages.docker.com/1.13/install.sh  | sh`
 Service: Create a single service called *web* that runs the latest nginx:
-`docker service create -p 80:80 --name web nginx:latest`
-`docker service ls`
-Now open the machine address in your browser : Any node
-Next let's inspect the service : `docker service inspect web`
+```docker service create -p 80:80 --name web nginx:latest
+docker service ls
+```
+Now open the machine address in your browser : Any node , Next let's inspect the service : `docker service inspect web`
 That's lots of info! Now, let's scale the service: `docker service scale web=15` and Docker has spread the 15 services evenly over all of the nodes
 Run `docker service ps web` to see the services divided and running across nodes
 Install Universal Control Plane
