@@ -1,7 +1,8 @@
 # Docker Swarm
 Install CS Docker Engine
-- Log in into each host using ssh, and install CS Docker Engine: `curl -SLf https://packages.docker.com/1.13/install.sh  | sh`
-Service: Create a single service called *web* that runs the latest nginx:
+- Log in into each host using ssh, and install CS Docker Engine: 
+`curl -SLf https://packages.docker.com/1.13/install.sh  | sh`
+Service: Let us a single service called *web* that runs the latest nginx:
 ```docker service create -p 80:80 --name web nginx:latest
 docker service ls
 ```
