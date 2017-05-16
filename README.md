@@ -1,4 +1,4 @@
-# Docker Swarm ![](/dockerswarm.gif)
+# Docker Swarm 🐋 ![](/dockerswarm.gif)
 
 Install CS Docker Engine by logging in into each host using ssh, 
 ```
