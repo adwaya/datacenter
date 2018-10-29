@@ -9,14 +9,13 @@ Service: Let us a single service called *web* that runs the latest nginx:
 docker service create -p 80:80 --name web nginx:latest
 docker service ls
 ```
-Now open the machine address in your browser : Any node , Next let's inspect the service : `docker service inspect web`
-That's lots of info! Now, let's scale the service: `docker service scale web=15` and Docker has spread the 15 services evenly over all of the nodes
-Run `docker service ps web` to see the services divided and running across nodes
-You can also drain a particular node, that will remove all services from that node and the services will automatically be rescheduled on other nodes.
-`docker node update --availability drain <node>` then run `docker service ps web`
-Run `docker node ls` and you can check out the nodes and see that 'node' is still active but drained `docker service ps web`
-Now bring 'node' back online and show it's new availability `docker node update --availability active <node>` and inspect the node using `docker node inspect worker1 --pretty`
-Install Universal Control Plane
+Next let's inspect the service : `docker service inspect web`
+- That's lots of info! Now, let's scale the service: `docker service scale web=15` and Docker has spread the 15 services evenly over all of the nodes.
+- Run `docker service ps web` to see the services divided and running across nodes
+- You can also drain a particular node, that will remove all services from that node and the services will automatically be rescheduled on other nodes`docker node update --availability drain <node>` then run `docker service ps web`
+- Run `docker node ls` and you can check out the nodes and see that 'node' is still active but drained `docker service ps web`
+- Now bring 'node' back online and show it's new availability `docker node update --availability active <node>` and inspect the node using `docker node inspect worker1 --pretty`
+## Install Universal Control Plane
 - Docker Universal Control Plane (UCP) allows managing from a centralized place your images, applications, networks, and other computing resources
 ```
 docker run --rm -it --name ucp \
